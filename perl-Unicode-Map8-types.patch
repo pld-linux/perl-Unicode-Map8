@@ -1,0 +1,22 @@
+--- Unicode-Map8-0.12/map8.h.orig	2002-12-28 00:42:09.000000000 +0000
++++ Unicode-Map8-0.12/map8.h	2004-01-13 20:51:48.000000000 +0000
+@@ -81,7 +81,7 @@
+ 
+ U16*  map8_to_str16(Map8*, U8*, U16*, int, int*);
+ U8*   map8_to_str8 (Map8*, U16*, U8*, int, int*);
+-U8*   map8_recode_8(Map8*, Map8*, U8*, U8*, int, int*);
++U8*   map8_recode8(Map8*, Map8*, U8*, U8*, STRLEN, STRLEN*);
+ 
+ int   map8_empty_block(Map8*, U8);
+ 
+--- Unicode-Map8-0.12/map8x.c.orig	2002-12-28 00:37:54.000000000 +0000
++++ Unicode-Map8-0.12/map8x.c	2004-01-13 20:51:45.000000000 +0000
+@@ -308,7 +308,7 @@
+ #endif  /* !PERL */
+ 
+ 
+-U8* map8_recode8(Map8* m1, Map8* m2, U8* from, U8* to, int len, int* rlen)
++U8* map8_recode8(Map8* m1, Map8* m2, U8* from, U8* to, STRLEN len, STRLEN* rlen)
+ {
+   dTHX;
+   U8* tmp;
