@@ -2,7 +2,7 @@
 Summary:	Unicode-Map8 perl module
 Summary(pl):	Modu³ perla Unicode-Map8
 Name:		perl-Unicode-Map8
-Version:	0.09
+Version:	0.10
 Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
@@ -43,7 +43,7 @@ strip --strip-unneeded $RPM_BUILD_ROOT/%{perl_sitearch}/auto/Unicode/Map8/*.so
 (
   cd $RPM_BUILD_ROOT%{perl_sitearch}/auto/Unicode/Map8
   sed -e "s#$RPM_BUILD_ROOT##" .packlist >.packlist.new
-  mv .packlist.new .packlist
+  mv -f .packlist.new .packlist
 )
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man3/* \
