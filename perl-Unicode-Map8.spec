@@ -3,7 +3,7 @@ Summary:	Unicode-Map8 perl module
 Summary(pl):	Modu³ perla Unicode-Map8
 Name:		perl-Unicode-Map8
 Version:	0.10
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Group(de):	Entwicklung/Sprachen/Perl
