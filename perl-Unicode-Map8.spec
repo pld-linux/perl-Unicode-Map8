@@ -1,60 +1,56 @@
 #
 # Conditional build:
-# _without_tests - do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Unicode
 %define		pnam	Map8
-Summary:	Unicode::Map8 perl module
-Summary(cs):	Modul Unicode::Map8 pro Perl
-Summary(da):	Perlmodul Unicode::Map8
-Summary(de):	Unicode::Map8 Perl Modul
-Summary(es):	Módulo de Perl Unicode::Map8
-Summary(fr):	Module Perl Unicode::Map8
-Summary(it):	Modulo di Perl Unicode::Map8
-Summary(ja):	Unicode::Map8 Perl ¥â¥¸¥å¡¼¥ë
-Summary(ko):	Unicode::Map8 ÆÞ ¸ðÁÙ
-Summary(no):	Perlmodul Unicode::Map8
-Summary(pl):	Modu³ perla Unicode::Map8
-Summary(pt_BR):	Módulo Perl Unicode::Map8
-Summary(pt):	Módulo de Perl Unicode::Map8
-Summary(ru):	íÏÄÕÌØ ÄÌÑ Perl Unicode::Map8
-Summary(sv):	Unicode::Map8 Perlmodul
-Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl Unicode::Map8
-Summary(zh_CN):	Unicode::Map8 Perl Ä£¿é
+Summary:	Unicode::Map8 - mapping table between 8-bit chars and Unicode
+Summary(pl):	Unicode::Map8 - tabela odwzorowuj±ca miêdzy znakami 8-bitowymi a Unikodem
 Name:		perl-Unicode-Map8
 Version:	0.12
-Release:	2
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b76a10615258894b1699b140f93940d0
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 5.6
+Patch0:		%{name}-types.patch
 BuildRequires:	perl-Unicode-String
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Unicode::Map8 - Mapping table between 8-bit chars and Unicode.
+The Unicode::Map8 class implement efficient mapping tables between
+8-bit character sets and 16 bit character sets like Unicode. The
+tables are efficient both in terms of space allocated and translation
+speed. The 16-bit strings is assumed to use network byte order.
 
 %description -l pl
-Unicode::Map8 - tablice mapowania pomiêdzy 8-bitowymi znakami a
-Unicodem.
+Klasa Unicode::Map8 implementuje wydajne tablice odwzorowuj±ce
+pomiêdzy 8-bitowymi zestawami znaków a 16-bitowymi zestawami takimi
+jak Unikod. Tablice s± wydajne zarówno je¶li chodzi o ilo¶æ
+przydzielonego miejsca, jak i szybko¶æ konwersji. Zak³ada siê, ¿e
+³añcuchy 16-bitowe u¿ywaj± sieciowej kolejno¶ci bajtów w s³owie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
-%{__make} OPTIMIZE="%{rpmcflags}"
+%{__make} \
+	OPTIMIZE="%{rpmcflags}"
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 install {diff_iso,make*maps,map8_*,umap} \
 	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
