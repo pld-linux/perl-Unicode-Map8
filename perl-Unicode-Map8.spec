@@ -10,7 +10,8 @@ Summary(pl):	Unicode::Map8 - tabela odwzorowuj±ca miêdzy znakami 8-bitowymi a Un
 Name:		perl-Unicode-Map8
 Version:	0.12
 Release:	3
-License:	GPL
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b76a10615258894b1699b140f93940d0
@@ -51,7 +52,6 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-
 install {diff_iso,make*maps,map8_*,umap} \
 	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
