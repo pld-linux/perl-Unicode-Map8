@@ -23,11 +23,11 @@ Summary(uk):	Модуль для Perl Unicode::Map8
 Summary(zh_CN):	Unicode::Map8 Perl дё©И
 Name:		perl-Unicode-Map8
 Version:	0.12
-Release:	1
+Release:	2
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-BuildRequires:	rpm-perlprov >= 3.0.3-16
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl >= 5.6
 BuildRequires:	perl-Unicode-String
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -43,7 +43,8 @@ Unicodem.
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-%{__perl} Makefile.PL
+%{__perl} Makefile.PL \
+	INSTALLDIRS=vendor 
 %{__make} OPTIMIZE="%{rpmcflags}"
 
 %{!?_without_tests:%{__make} test}
@@ -64,11 +65,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README *txt
 %attr(755,root,root) %{_bindir}/*
-%{perl_sitearch}/Unicode/Map8.pm
-%{perl_sitearch}/Unicode/Map8
-%dir %{perl_sitearch}/auto/Unicode/Map8
-%{perl_sitearch}/auto/Unicode/Map8/Map8.bs
-%attr(755,root,root) %{perl_sitearch}/auto/Unicode/Map8/Map8.so
+%{perl_vendorarch}/Unicode/Map8.pm
+%{perl_vendorarch}/Unicode/Map8
+%dir %{perl_vendorarch}/auto/Unicode/Map8
+%{perl_vendorarch}/auto/Unicode/Map8/Map8.bs
+%attr(755,root,root) %{perl_vendorarch}/auto/Unicode/Map8/Map8.so
 %{_mandir}/man[13]/*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*
