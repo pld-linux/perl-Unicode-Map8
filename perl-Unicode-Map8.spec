@@ -3,8 +3,8 @@
 %bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define		pdir	Unicode
-%define		pnam	Map8
+%define	pdir	Unicode
+%define	pnam	Map8
 Summary:	Unicode::Map8 - mapping table between 8-bit chars and Unicode
 Summary(pl):	Unicode::Map8 - tabela odwzorowuj±ca miêdzy znakami 8-bitowymi a Unikodem
 Name:		perl-Unicode-Map8
