@@ -22,8 +22,8 @@ Summary(sv):	Unicode::Map8 Perlmodul
 Summary(uk):	Модуль для Perl Unicode::Map8
 Summary(zh_CN):	Unicode::Map8 Perl дё©И
 Name:		perl-Unicode-Map8
-Version:	0.11
-Release:	5
+Version:	0.12
+Release:	1
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
