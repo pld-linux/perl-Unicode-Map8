@@ -5,7 +5,7 @@ Summary:	Unicode::Map8 perl module
 Summary(pl):	Modu³ perla Unicode::Map8
 Name:		perl-Unicode-Map8
 Version:	0.11
-Release:	3
+Release:	4
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -37,14 +37,12 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 install {diff_iso,make*maps,map8_*,umap} \
 	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
-gzip -9nf Changes README *txt
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc Changes README *txt
 %{perl_sitearch}/Unicode/Map8.pm
 %{perl_sitearch}/Unicode/Map8
 %dir %{perl_sitearch}/auto/Unicode/Map8
