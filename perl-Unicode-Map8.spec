@@ -4,7 +4,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Unicode
 %define		pnam	Map8
-Summary:	Unicode::Map8 perl module 
+Summary:	Unicode::Map8 perl module
 Summary(cs):	Modul Unicode::Map8 pro Perl
 Summary(da):	Perlmodul Unicode::Map8
 Summary(de):	Unicode::Map8 Perl Modul
