@@ -1,12 +1,11 @@
+%include	/usr/lib/rpm/macros.perl
 %define	pdir	Unicode
 %define	pnam	Map8
-%include	/usr/lib/rpm/macros.perl
 Summary:	Unicode-Map8 perl module
 Summary(pl):	Modu³ perla Unicode-Map8
 Name:		perl-Unicode-Map8
 Version:	0.11
-Release:	2
-
+Release:	3
 License:	GPL
 Group:		Development/Languages/Perl
 Source0:	ftp://ftp.perl.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
@@ -23,7 +22,7 @@ Unicode-Map8 - tablice mapowania pomiêdzy 8-bitowymi znakami a
 Unicodem.
 
 %prep
-%setup -q -n Unicode-Map8-%{version}
+%setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
 perl Makefile.PL
