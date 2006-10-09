@@ -16,6 +16,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	b76a10615258894b1699b140f93940d0
 Patch0:		%{name}-types.patch
+URL:		http://search.cpan.org/dist/Unicode-Map8/
 BuildRequires:	perl-Unicode-String
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
