@@ -6,7 +6,7 @@
 %define		pdir	Unicode
 %define		pnam	Map8
 Summary:	Unicode::Map8 - mapping table between 8-bit chars and Unicode
-Summary(pl):	Unicode::Map8 - tabela odwzorowuj±ca miêdzy znakami 8-bitowymi a Unikodem
+Summary(pl.UTF-8):   Unicode::Map8 - tabela odwzorowujÄ…ca miÄ™dzy znakami 8-bitowymi a Unikodem
 Name:		perl-Unicode-Map8
 Version:	0.12
 Release:	4
@@ -28,12 +28,12 @@ The Unicode::Map8 class implement efficient mapping tables between
 tables are efficient both in terms of space allocated and translation
 speed. The 16-bit strings is assumed to use network byte order.
 
-%description -l pl
-Klasa Unicode::Map8 implementuje wydajne tablice odwzorowuj±ce
-pomiêdzy 8-bitowymi zestawami znaków a 16-bitowymi zestawami takimi
-jak Unikod. Tablice s± wydajne zarówno je¶li chodzi o ilo¶æ
-przydzielonego miejsca, jak i szybko¶æ konwersji. Zak³ada siê, ¿e
-³añcuchy 16-bitowe u¿ywaj± sieciowej kolejno¶ci bajtów w s³owie.
+%description -l pl.UTF-8
+Klasa Unicode::Map8 implementuje wydajne tablice odwzorowujÄ…ce
+pomiÄ™dzy 8-bitowymi zestawami znakÃ³w a 16-bitowymi zestawami takimi
+jak Unikod. Tablice sÄ… wydajne zarÃ³wno jeÅ›li chodzi o iloÅ›Ä‡
+przydzielonego miejsca, jak i szybkoÅ›Ä‡ konwersji. ZakÅ‚ada siÄ™, Å¼e
+Å‚aÅ„cuchy 16-bitowe uÅ¼ywajÄ… sieciowej kolejnoÅ›ci bajtÃ³w w sÅ‚owie.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
