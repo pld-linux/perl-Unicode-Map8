@@ -8,13 +8,13 @@
 Summary:	Unicode::Map8 - mapping table between 8-bit chars and Unicode
 Summary(pl.UTF-8):	Unicode::Map8 - tabela odwzorowująca między znakami 8-bitowymi a Unikodem
 Name:		perl-Unicode-Map8
-Version:	0.12
-Release:	8
+Version:	0.13
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	b76a10615258894b1699b140f93940d0
+# Source0-md5:	fc93a37cabcae488bd95ca07bf5c919e
 Patch0:		%{name}-types.patch
 URL:		http://search.cpan.org/dist/Unicode-Map8/
 BuildRequires:	perl-Unicode-String
