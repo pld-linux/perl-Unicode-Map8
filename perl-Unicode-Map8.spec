@@ -13,11 +13,11 @@ Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Unicode/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	fc93a37cabcae488bd95ca07bf5c919e
 Patch0:		%{name}-types.patch
 URL:		http://search.cpan.org/dist/Unicode-Map8/
-BuildRequires:	perl-Unicode-String
+BuildRequires:	perl-Unicode-String >= 2.00
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -54,7 +54,7 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
-install {diff_iso,make*maps,map8_*,umap} \
+install {diff_iso,make*maps,map8_*} \
 	$RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 %clean
@@ -62,13 +62,14 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README *txt
-%attr(755,root,root) %{_bindir}/*
+%doc Changes README rfc1345.txt
+%attr(755,root,root) %{_bindir}/umap
 %{perl_vendorarch}/Unicode/Map8.pm
 %{perl_vendorarch}/Unicode/Map8
 %dir %{perl_vendorarch}/auto/Unicode/Map8
 %{perl_vendorarch}/auto/Unicode/Map8/Map8.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Unicode/Map8/Map8.so
-%{_mandir}/man[13]/*
+%{_mandir}/man1/umap.1p*
+%{_mandir}/man3/Unicode::Map8.3pm*
 %dir %{_examplesdir}/%{name}-%{version}
 %attr(755,root,root) %{_examplesdir}/%{name}-%{version}/*
