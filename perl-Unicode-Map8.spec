@@ -67,7 +67,6 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Unicode/Map8.pm
 %{perl_vendorarch}/Unicode/Map8
 %dir %{perl_vendorarch}/auto/Unicode/Map8
-%{perl_vendorarch}/auto/Unicode/Map8/Map8.bs
 %attr(755,root,root) %{perl_vendorarch}/auto/Unicode/Map8/Map8.so
 %{_mandir}/man1/umap.1p*
 %{_mandir}/man3/Unicode::Map8.3pm*
