@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests	# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Unicode
 %define		pnam	Map8
 Summary:	Unicode::Map8 - mapping table between 8-bit chars and Unicode
